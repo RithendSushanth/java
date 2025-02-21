@@ -11,18 +11,20 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
+                bat 'javac Fibonacci.java'
             }
         }
         
         stage('Test') {
             steps {
-                echo 'Testing'
+                echo 'Testing...'
             }
         }
         
-        stage('Deploy') {
+        stage('Run') {
             steps {
-                echo 'Deploying...'
+                echo 'In run stage...'
+                bat 'java Fibonacci'
             }
         }
     }
